@@ -1,0 +1,509 @@
+import java.util.Scanner;
+import java.text.NumberFormat;
+
+public class incomeCalculator2
+{
+
+	static Scanner sc = new Scanner(System.in);
+    static NumberFormat nf = NumberFormat.getCurrencyInstance();
+    final static double weeks = 4.33333333;
+    final static int months = 12;
+    static double amountPerHour;
+    static int hoursADay;
+    static double daysAWeek;
+    static double amountPerDay;
+    static double amountPerWeek;
+    static double amountPerMonth;
+    static double amountPerYear;
+    static double amountPerTwoYears;
+    static String state;
+	static double income;
+	static boolean validInput = true;
+	static String place;
+	static String person;
+	static String compare;
+	static double dailyIncome;
+	static double weeklyIncome;
+	static double monthlyIncome;
+	static double multiYear;
+	static double difDaily;
+	static double difWeekly;
+	static double difMonthly;
+	static double difYearly;
+	static double difMultiYearly;
+
+	 public static void main(String[]args)
+	{
+                calculator();
+		        aveIncome();
+		        stateCalculator();
+
+	}
+
+
+	public static void calculator()
+    {
+
+		System.out.println("                                             Welcome to Income Calculator! ");
+		System.out.println(" Plese enter your first name?");
+		person = sc.next();
+		System.out.println(" Please enter an hourly wage?");
+		amountPerHour = sc.nextDouble();
+		System.out.println(" Please enter how many hours in a day you work ");
+		hoursADay = sc.nextInt();
+		System.out.println(" Please enter how many days a week you work on average?");
+		daysAWeek = sc.nextDouble();
+
+
+		amountPerDay =((amountPerHour)*(hoursADay));
+		amountPerWeek = ((amountPerDay)*(daysAWeek));
+		amountPerMonth = ((amountPerWeek)*(weeks));
+		amountPerYear = ((amountPerMonth)*(months));
+		amountPerTwoYears = (amountPerYear) * 2;
+
+		System.out.println();
+		System.out.println();
+		System.out.println(" " + (person) + " you would make " + nf.format(amountPerDay)+ " Per Day!");
+		System.out.println(" " + nf.format(amountPerWeek) + " Per Week!");
+		System.out.println(" " + nf.format(amountPerMonth) + " Per Month!");
+		System.out.println(" " + nf.format(amountPerYear) + " Per Year!");
+		System.out.println(" " + nf.format(amountPerTwoYears) + " Per Two Years!");
+
+
+	}
+
+
+	public static void aveIncome()
+	{
+		System.out.println(" Would you like to compare the wage you entered to the average income of another state? (Y/N)");
+		compare = sc.next();
+
+		while(compare.equalsIgnoreCase("Y"))
+		{
+
+		    do
+		    {
+
+			System.out.println();
+		    System.out.println(" Please enter a state to view that state's average income per year! ");
+			System.out.print(" NOTE. If the state you are trying to enter has a 2 word name please enter it by abbreviation.");
+			System.out.println(" EX...WV or wv");
+
+		    state = sc.next();
+		    System.out.println();
+		    validInput = true;
+
+		    switch(state.toUpperCase())
+		    {
+			    case "ALABAMA":
+			    case "AL":
+				    income = 43330;
+				    place = "Alabama";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "ALASKA":
+			    case "AK":
+				    income = 61749;
+				    place = "Alaska";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "ARIZONA":
+			    case "AZ":
+				    income = 49698;
+				    place = "Arizona";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "ARKANSAS":
+			    case "AR":
+				    income = 40877;
+				    place = "Arkansas";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "CALIFORNIA":
+			    case "CA":
+				    income = 57161;
+				    place = "California";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "COLORADO":
+			    case "CO":
+				    income = 61634;
+				    place = "Colorado";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "CONNECTICUT":
+			    case "CT":
+				    income = 67807;
+				    place = "Connecticut";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "DELAWARE":
+			    case "DE":
+				    income = 54377;
+				    place = "Delaware";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "DISTRICT OF COLUMBIA":
+			    case "DC":
+				    income = 61229;
+				    place = "D.C";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "FlORIDA":
+			    case "FL":
+				    income = 47106;
+				    place = "Florida";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "GEORGIA":
+			    case "GA":
+				    income = 47753;
+				    place = "Georgia";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "HAWAII":
+			    case "HI":
+				    income = 60814;
+				    place = "Hawaii";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "IDAHO":
+			    case "ID":
+				    income = 49952;
+				    place = "Idaho";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "ILLINOIS":
+			    case "IL":
+				    income = 54083;
+				    place = "Illinois";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "INDIANA":
+			    case "IN":
+				    income = 48178;
+				    place = "Indiana";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "IOWA":
+			    case "IA":
+				    income = 53364;
+				    place = "Iowa";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "KANSAS":
+			    case "KS":
+				    income = 49804;
+				    place = "Kansas";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "KENTUCKY":
+			    case "KY":
+				    income = 42260;
+				    place = "Kentucky";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "LOUISIANA":
+			    case "LA":
+				    income = 40844;
+				    place = "Louisiana";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MAINE":
+			    case "ME":
+				    income = 50668;
+				    place = "Maine";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MARYLAND":
+			    case "MD":
+				    income = 69518;
+				    place = "Maryland";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MASSACHUSETTS":
+			    case "MA":
+				    income = 64555;
+				    place = "Massachsetts";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MICHIGAN":
+			    case "MI":
+				    income = 49902;
+				    place = "Michigan";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MINNESOTA":
+			    case "MN":
+				    income = 59847;
+				    place = "Minnesota";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MISSISSIPPI":
+			    case "MS":
+				    income = 40338;
+				    place = "Mississippi";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MISSOURI":
+			    case "MO":
+				    income = 49290;
+				    place = "Missouri";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "MONTANA":
+			    case "MT":
+				    income = 43924;
+				    place = "Montana";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NEBRASKA":
+			    case "NE":
+				    income = 55107;
+				    place = "Nebraska";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NEVADA":
+			    case "NV":
+				    income = 49204;
+				    place = "Nevada";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NEW HAMPSHIRE":
+			    case "NH":
+				    income = 69888;
+				    place = "New Hampshire";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NEW JERSEY":
+			    case "NJ":
+				    income = 65321;
+				    place = "New Jersey";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NEW MEXICO":
+			    case "NM":
+				    income = 44472;
+				    place = "New Mexico";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NEW YORK":
+			    case "NY":
+				    income = 51962;
+				    place = "New York";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NORTH CAROLINA":
+			    case "NC":
+				    income = 55583;
+				    place = "North Carolina";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "NORTH DAKOTA":
+			    case "ND":
+			 	    income = 55583;
+			 	    place = "North Dakota";
+			 	    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "OHIO":
+			    case "OH":
+			  	    income = 46672;
+			  	    place = "Ohio";
+			  	    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "OKLAHOMA":
+			    case "OK":
+				    income = 47282;
+				    place = "Oklahoma";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "OREGON":
+			    case "OR":
+				    income = 54066;
+				    place = "Oregon";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "PENNSYLVANIA":
+			    case "PA":
+				    income = 52481;
+				    place = "Pennsylvania";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "RHODE ISLAND":
+			    case "RI":
+				    income = 55158;
+				    place = "Rhode Island";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "SOUTH CAROLINA":
+			    case "SC":
+				    income = 43716;
+				    place = "South Carolina";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "SOUTH DAKOTA":
+			    case "SD":
+				    income = 50488;
+				    place = "South Dakota";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "TENNESSEE":
+			    case "TN":
+				    income = 42785;
+				    place = "Tennessee";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "TEXAS":
+			    case "TX":
+				    income = 51752;
+				    place = "Texas";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "UTAH":
+			    case "UT":
+				    income = 60053;
+				    place = "Utah";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "VERMONT":
+			    case "VT":
+				    income = 56175;
+				    place = "Vermont";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "VIRGINIA":
+			    case "VA":
+			    	income = 65635;
+			    	place = "Virginia";
+			    	System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+			    	break;
+
+			    case "WASHINGTON":
+			    case "WA":
+				    income = 60520;
+				    place = "Washington";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "WEST VIRGINIA":
+			    case "WV":
+				    income = 43361;
+				    place = "West Virginia";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "WISCONSIN":
+			    case "WI":
+				    income = 54205;
+				    place = "Wisconsin";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    case "WYOMING":
+			    case "WY":
+				    income = 56569;
+				    place = "Wyoming";
+				    System.out.println(" The average income for " + (place)+ " is: " + nf.format(income));
+				    break;
+
+			    default:
+				    System.out.println(" ERROR! PLEASE CHECK YOUR SPELLING AND TRY AGAIN! ");
+				    validInput = false;
+				    break;
+
+				}
+
+			}while (!validInput);
+
+           compare = "n";
+		}
+
+	}
+
+	public static void stateCalculator()
+	{
+
+		dailyIncome = (income)/364.25;
+		weeklyIncome = (income)/52;
+		monthlyIncome = (income)/12;
+		multiYear = (income)* 2;
+
+		difDaily = ((amountPerDay)-(dailyIncome));
+		difWeekly = ((amountPerWeek)-(weeklyIncome));
+		difMonthly = ((amountPerMonth)-(monthlyIncome));
+		difYearly = ((amountPerYear)-(income));
+		difMultiYearly = ((amountPerTwoYears)-(multiYear));
+
+
+		System.out.println();
+		System.out.println(" " + (person) + ": " + nf.format(amountPerDay) + " Per day");
+		System.out.println(" " + (place) + ": " + nf.format(dailyIncome) + " Per day on average");
+		System.out.println(" Differense of " + nf.format (difDaily) + " compared to " + (place) + " Per day");
+		System.out.println();
+		System.out.println(" " + (person) + ": " + nf.format(amountPerWeek) + " Per week");
+		System.out.println(" " + (place) + ": " + nf.format(weeklyIncome) + " Per week on average");
+		System.out.println(" Differense of " + nf.format(difWeekly) + " compared to " + (place) + " Per week");
+		System.out.println();
+        System.out.println(" " + (person) + ": " + nf.format(amountPerMonth) + " Per month");
+        System.out.println(" " + (place) + ": " + nf.format(monthlyIncome) + " Per month on average");
+        System.out.println(" Differense of " + nf.format(difMonthly) + " compared to " + (place) + " Per month");
+        System.out.println();
+        System.out.println(" " + (person) + ": " + nf.format(amountPerYear) + " Per year");
+        System.out.println(" " + (place) + ": " + nf.format(income) + " Per year on average");
+        System.out.println(" Differense of " + nf.format(difYearly) + " compared to " + (place) + " Per year");
+        System.out.println();
+        System.out.println(" " + (person) + ": " + nf.format(amountPerTwoYears) + " Per two years");
+        System.out.println(" " + (place) + ": " + nf.format(multiYear) + " Per two years on average");
+        System.out.println(" Differense of " + nf.format(difMultiYearly) + " compared to " + (place) + " Over two years");
+        System.out.println();
+
+
+
+	}
+}
